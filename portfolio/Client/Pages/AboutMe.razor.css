@@ -1,0 +1,263 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+    
+}
+
+html {
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+.sobremi {
+    color: #fff;
+    padding: 50px 20px;
+    height: auto;
+    background-color: #1e2326;
+    height: 100vh;
+}
+
+    .sobremi .contenido-seccion {
+        max-width: 1100px;
+        margin: auto;
+        margin-top: 180px;
+    }
+
+    .sobremi h2 {
+        font-size: 48px;
+        font-family: 'Righteous';
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .sobremi .contenido-seccion p {
+        font: 18px;
+        line-height: 22px;
+        margin-bottom: 20px;
+    }
+
+    .sobremi .contenido-seccion span {
+        color: #3593cf;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .sobremi .fila {
+        display: flex;
+    }
+
+        .sobremi .fila .col {
+            width: 50%;
+        }
+
+            .sobremi .fila .col h3 {
+                font-size: 28px;
+                font-family: 'Righteous';
+                margin-bottom: 25px;
+            }
+
+            .sobremi .fila .col ul {
+                list-style: none;
+            }
+
+                .sobremi .fila .col ul li {
+                    margin: 12px 0;
+                }
+
+                    .sobremi .fila .col ul li strong {
+                        display: inline-block;
+                        color: #3593cf;
+                        width: 200px;
+                    }
+
+                    .sobremi .fila .col ul li span {
+                        background-color: #3593cf;
+                        padding: 3px;
+                        font-weight: bold;
+                        border-radius: 5px;
+                    }
+
+            .sobremi .fila .col .contenedor-intereses {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+                .sobremi .fila .col .contenedor-intereses .interes {
+                    width: 125px;
+                    height: 125px;
+                    background-color: #252A2E;
+                    border-radius: 10px;
+                    margin: 0 15px 15px 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    transition: .3s;
+                }
+
+                    .sobremi .fila .col .contenedor-intereses .interes:hover {
+                        background-color: #3593cf;
+                    }
+
+                    .sobremi .fila .col .contenedor-intereses .interes i {
+                        font-size: 30px;
+                        margin-bottom: 10px;
+                    }
+
+    .sobremi button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 2px solid #fff;
+        width: fit-content;
+        display: block;
+        margin: 20px auto;
+        padding: 10px 22px;
+        font-size: 16px;
+        color: #fff;
+        position: relative;
+        z-index: 10;
+    }
+
+        .sobremi button .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: #3593cf;
+            z-index: -1;
+            transition: 1s;
+        }
+
+        .sobremi button:hover .overlay {
+            width: 100%;
+        }
+
+footer {
+    background-color: #252A2E;
+    color: #fff;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+
+
+    footer .redes a {
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        margin: 30px 5px;
+        font-size: 20px;
+        transition: .3s;
+    }
+
+.redes a:hover {
+    background-color: #3593cf;
+}
+
+footer .arriba {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #3593cf;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+/* SECCION RESPONSIVE */
+@media screen and (max-width:980px) {
+    nav {
+        display: none;
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+
+    nav.responsive {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        width: 180px;
+    }
+
+        nav.responsive ul {
+            display: block !important;
+        }
+
+            nav.responsive ul li {
+                border-bottom: 1px solid #fff;
+                padding: 10px 0;
+            }
+}
+
+@media screen and (max-width:700px) {
+    .sobremi .fila {
+        display: block;
+    }
+
+        .sobremi .fila .col {
+            width: fit-content;
+        }
+
+    .skills .fila {
+        display: block;
+    }
+
+        .skills .fila .col {
+            width: 100%;
+        }
+
+            .skills .fila .col .barra-skill {
+                width: 100%;
+            }
+
+    .curriculum .fila {
+        display: block;
+    }
+
+        .curriculum .fila .col {
+            width: 90%;
+        }
+
+        .curriculum .fila .derecha {
+            margin-left: 20px;
+        }
+
+    .portfolio .galeria {
+        display: block;
+        width: 100%;
+    }
+
+        .portfolio .galeria .proyecto {
+            max-width: 100%;
+        }
+
+            .portfolio .galeria .proyecto img {
+                width: 100%;
+            }
+
+    .contacto .fila {
+        display: block;
+    }
+
+        .contacto .fila .col {
+            width: 100%;
+        }
+}

@@ -1,0 +1,287 @@
+﻿* {
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+
+.curriculum {
+    background-color: #1e2326;
+    color: #fff;
+    padding: 50px 20px;
+}
+
+    .curriculum .contenido-seccion {
+        max-width: 1100px;
+        margin: auto;
+        margin-top: 180px;
+    }
+
+
+    .curriculum .fila {
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .curriculum .fila .col {
+            width: 49%;
+            padding: 0 20px;
+        }
+
+            
+
+        .curriculum .fila .izquierda {
+            border-right: 2px solid #252A2E;
+        }
+
+        .curriculum .fila .derecha {
+            border-left: 2px solid #252A2E;
+        }
+
+        .curriculum .fila .item {
+            padding: 25px;
+            margin-bottom: 30px;
+            background-color: #252A2E;
+            position: relative;
+        }
+
+            .curriculum .fila .item h4 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .curriculum .fila .item .casa {
+                color: #3593cf;
+                font-size: 22px;
+                font-weight: bold;
+                display: block;
+            }
+
+            .curriculum .fila .item .fecha {
+                display: block;
+                color: #3593cf;
+                margin-bottom: 10px;
+            }
+
+            .curriculum .fila .item p {
+                line-height: 24px;
+            }
+
+        .curriculum .fila .izq {
+            border-right: 2px solid #3593cf;
+            margin-right: 20px;
+        }
+
+        .curriculum .fila .der {
+            border-left: 2px solid #3593cf;
+            margin-left: 20px;
+        }
+
+        .curriculum .fila .item .conectori {
+            height: 2px;
+            background-color: #3593cf;
+            width: 47px;
+            position: absolute;
+            top: 50%;
+            right: -47px;
+            z-index: 5;
+        }
+
+            .curriculum .fila .item .conectori .circuloi {
+                display: block;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: #3593cf;
+                float: right;
+                position: relative;
+                bottom: 4px;
+            }
+
+        .curriculum .fila .item .conectord {
+            height: 2px;
+            background-color: #3593cf;
+            width: 47px;
+            position: absolute;
+            top: 50%;
+            left: -47px;
+            z-index: 5;
+        }
+
+            .curriculum .fila .item .conectord .circulod {
+                display: block;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                background-color: #3593cf;
+                float: left;
+                position: relative;
+                bottom: 4px;
+            }
+
+.subheading {
+    font-family: 'Roboto Mono';
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.curriculum button {
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: fit-content;
+    display: block;
+    margin: 20px auto;
+    padding: 10px 22px;
+    font-size: 16px;
+    color: #fff;
+    position: relative;
+    z-index: 10;
+}
+    .curriculum  button .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        background-color: #3593cf;
+        z-index: -1;
+        transition: 1s;
+    }
+    .curriculum button:hover .overlay {
+        width: 100%;
+    }
+
+footer {
+    background-color: #252A2E;
+    color: #fff;
+    padding: 5px 0 5px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+
+
+    footer .redes a {
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        width: 42px;
+        height: 42px;
+        line-height: 42px;
+        margin: 30px 5px;
+        font-size: 20px;
+        transition: .3s;
+    }
+
+.redes a:hover {
+    background-color: #3593cf;
+}
+
+footer .arriba {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #3593cf;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 18px;
+}
+
+/* SECCION RESPONSIVE */
+@media screen and (max-width:980px) {
+    nav {
+        display: none;
+    }
+
+    .nav-responsive {
+        display: block;
+    }
+
+    nav.responsive {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 75px;
+        background-color: #252A2E;
+        width: 180px;
+    }
+
+        nav.responsive ul {
+            display: block !important;
+        }
+
+            nav.responsive ul li {
+                border-bottom: 1px solid #fff;
+                padding: 10px 0;
+            }
+}
+
+@media screen and (max-width:700px) {
+    .sobremi .fila {
+        display: block;
+    }
+
+        .sobremi .fila .col {
+            width: fit-content;
+        }
+
+    .skills .fila {
+        display: block;
+    }
+
+        .skills .fila .col {
+            width: 100%;
+        }
+
+            .skills .fila .col .barra-skill {
+                width: 100%;
+            }
+
+    .curriculum .fila {
+        display: block;
+    }
+
+        .curriculum .fila .col {
+            width: 90%;
+        }
+
+        .curriculum .fila .derecha {
+            margin-left: 20px;
+        }
+
+    .portfolio .galeria {
+        display: block;
+        width: 100%;
+    }
+
+        .portfolio .galeria .proyecto {
+            max-width: 100%;
+        }
+
+            .portfolio .galeria .proyecto img {
+                width: 100%;
+            }
+
+    .contacto .fila {
+        display: block;
+    }
+
+        .contacto .fila .col {
+            width: 100%;
+        }
+}

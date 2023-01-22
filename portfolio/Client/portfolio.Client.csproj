@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Shared\portfolio.Shared.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\img\Portfolio\" />
-  </ItemGroup>
-
 </Project>

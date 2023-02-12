@@ -1,4 +1,6 @@
-﻿@page "/Curriculum"
+﻿@inject IStringLocalizer<Resource> localizer
+
+@page "/Curriculum"
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,42 +14,40 @@
 <body>
     <section id="curriculum" class="curriculum">
         <div class="contenido-seccion">
-            <MudText Typo="Typo.h6" Style="font-size: 48px; font-family: 'Righteous'; text-align: center; padding: 20px 0;">CURRICULUM</MudText>
+            <MudText Typo="Typo.h6" Style="font-size: 48px; font-family: 'Righteous'; text-align: center; padding: 20px 0;">@localizer["Curriculum.Title"]</MudText>
             <div class="fila">
                 <div class="col izquierda">
-                    <MudText Typo="Typo.h6" Style="font-size: 28px; font-family: 'Righteous'; margin-bottom: 25px;">Educación</MudText>
+                    <MudText Typo="Typo.h6" Style="font-size: 28px; font-family: 'Righteous'; margin-bottom: 25px;">@localizer["Curriculum.Education"]</MudText>
                     <div class="item izq">
                         <span class="casa">SENA</span>
                         <span class="fecha">2020 - 2022</span>
-                        <MudText Typo="Typo.body2" Style="margin-bottom:26px;">TECNÓLOGO EN ANÁLISIS Y DESARROLLO DE SISTEMAS DE INFORMACIÓN</MudText>
-                        <a href="https://drive.google.com/file/d/1lXvBRGEf9U1KRLXjAQm-yVdGoitRww5X/view?usp=share_link" target="_blank"><button>
-                            Certificado<i class="fa-solid fa-download"></i>
-                            <span class="overlay"></span>
-                        </button></a>
+                        <MudText Typo="Typo.body2" Style="margin-bottom:5px;">@localizer["Curriculum.EducationTecnologo"]</MudText>
+                        <MudButton Href="https://drive.google.com/file/d/1lXvBRGEf9U1KRLXjAQm-yVdGoitRww5X/view?usp=share_link" Target="_blank" Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.Download" Color="Color.Info">
+                            @localizer["Curriculum.BtnCertificate"]
+                        </MudButton>
+
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
                     </div>
                     <div class="item izq">
                         <span class="casa">UDEMY</span>
-                        <span class="fecha">18 HORAS</span>
-                        <MudText Typo="Typo.body2">Programando en Blazor - ASP.NET Core</MudText>
-                        <a href="https://drive.google.com/file/d/1tS-eAJNcow7FkAyiI6n-2y3aiEhn6K8s/view?usp=share_link" target="_blank"><button>
-                            Certificado<i class="fa-solid fa-download"></i>
-                            <span class="overlay"></span>
-                        </button></a>
+                        <span class="fecha">18 @localizer["Curriculum.Hours"]</span>
+                        <MudText Typo="Typo.body2" Style="margin-bottom:5px;"> @localizer["Curriculum.EducationBlazor-ASP.NETCore"] Programando en Blazor - ASP.NET Core</MudText>
+                        <MudButton Href="https://drive.google.com/file/d/1tS-eAJNcow7FkAyiI6n-2y3aiEhn6K8s/view?usp=share_link" Target="_blank" Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.Download" Color="Color.Info">
+                            @localizer["Curriculum.BtnCertificate"]
+                        </MudButton>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
                     </div>
                     <div class="item izq">  
                         <span class="casa">SENA</span>
-                        <span class="fecha">48 HORAS</span>
-                        <MudText Typo="Typo.body2">APLICACION DEL MARCO DE TRABAJO SCRUM PARA PROYECTOS DE DESARROLLO DE SOFTWARE</MudText>
-                        <a href="https://drive.google.com/file/d/1gi0uvUjKZAKocOROQsYKwckQsDuLTAXf/view?usp=share_link" target="_blank"><button>
-                            Certificado<i class="fa-solid fa-download"></i>
-                            <span class="overlay"></span>
-                        </button></a>
+                        <span class="fecha">48 @localizer["Curriculum.Hours"]</span>
+                        <MudText Typo="Typo.body2" Style="margin-bottom:5px;">@localizer["Curriculum.EducationScrum"] APLICACION DEL MARCO DE TRABAJO SCRUM PARA PROYECTOS DE DESARROLLO DE SOFTWARE</MudText>
+                        <MudButton Href="https://drive.google.com/file/d/1gi0uvUjKZAKocOROQsYKwckQsDuLTAXf/view?usp=share_link" Target="_blank" Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.Download" Color="Color.Info">
+                            @localizer["Curriculum.BtnCertificate"]
+                        </MudButton>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
@@ -55,11 +55,11 @@
                 </div>
 
                 <div class="col derecha">
-                    <MudText Typo="Typo.h6" Style="font-size: 28px; font-family: 'Righteous'; margin-bottom: 25px;">Experiencia de trabajo</MudText>
+                    <MudText Typo="Typo.h6" Style="font-size: 28px; font-family: 'Righteous'; margin-bottom: 25px;">@localizer["Curriculum.WorkExperience"]</MudText>
                     <div class="item der">
                         <span class="casa">EMCARTAGO</span>
                         <span class="fecha">02-2022 - 08-2022</span>
-                        <MudText Typo="Typo.body2" Style="margin-bottom:4px;">Desarrollo de distintos formularios web realizados en los siguientes lenguajes, Frameworks y librerías:</MudText>
+                        <MudText Typo="Typo.body2" Style="margin-bottom:4px;">@localizer["Curriculum.WorkExperiencePesajeInteligente"]</MudText>
                         <div class="subheading">
                             <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
                             <img alt="C SHARP" src="https://img.shields.io/badge/C%20Sharp-%23563D7C.svg?style=for-the-badge&logo=Csharp&logoColor=white">
@@ -79,7 +79,7 @@
                     <div class="item der">
                         <span class="casa">PESAJE INTELIGENTE </span>
                         <span class="fecha">09-2022 - 11-2022</span>
-                        <MudText Typo="Typo.body2" Style="margin-bottom:6px;">Desarrollo de componentes en visual studio escritorio realizados en los siguientes lenguajes, Frameworks y librerías:</MudText>
+                        <MudText Typo="Typo.body2" Style="margin-bottom:6px;">@localizer["Curriculum.WorkExperienceEmCartago"]</MudText>
                         <div class="subheading">
                             <img alt="C SHARP" src="https://img.shields.io/badge/C%20Sharp-%23563D7C.svg?style=for-the-badge&logo=Csharp&logoColor=white">
                             <img alt="SQL" src="https://img.shields.io/badge/SQL%20SERVER-%23563D7C.svg?style=for-the-badge&logo=entity%20framework&logoColor=white">

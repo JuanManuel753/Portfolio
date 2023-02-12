@@ -1,4 +1,5 @@
-﻿@page "/Aboutme"
+﻿@inject IStringLocalizer<Resource> localizer
+@page "/Aboutme"
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,31 +14,30 @@
 <body>
     <section  name="sobremi" class="sobremi">
         <div class="contenido-seccion">
-            <MudText Style="font-family: 'Righteous'; text-align: center;padding: 20px;" Typo="Typo.h3">SOBRE MÍ</MudText>
+            <MudText Style="font-family: 'Righteous'; text-align: center;padding: 20px;" Typo="Typo.h3">@localizer["AboutMe.Title"]</MudText>
             
 
-            <MudText Typo="Typo.body2"><span>Hola, soy Juan Manuel Ramirez Hernandez.</span> Me gusta todo lo que tiene que ver con desarrollos ya sean web o escritorio. Soy una persona responsable y comprometida con mi trabajo, constantemente siempre estoy aprendiendo todo tipo de nuevas tecnologias y herramientas  para que mis habilidades mejoren.</MudText>
-            <MudText Typo="Typo.body2" Style="margin-bottom:10px;"> Puedes ver algunos de mis proyectos realizados en la seccion de portafolio.</MudText>
+            <MudText Typo="Typo.body2"><span>@localizer["AboutMe.Name"]</span> @localizer["AboutMe.Content"]</MudText>
 
             <div class="fila">
                 <!-- datos personales -->
                 <div class="col">
-                    <MudText Typo="Typo.h6" Style="margin-bottom:10px;">Datos Personales</MudText>
+                    <MudText Typo="Typo.h6" Style="margin-bottom:10px;">@localizer["AboutMe.PersonalInformation"]</MudText>
                     <ul>
                         <li>
-                            <MudText Typo="Typo.h6"><strong>Fecha de Nacimiento</strong></MudText>
+                            <MudText Typo="Typo.h6"><strong>@localizer["AboutMe.DateOfBirth"]</strong></MudText>
                             <MudText Typo="Typo.body2">11-04-2000</MudText>
                         </li>
                         <li>
-                            <MudText Typo="Typo.h6"><strong>Teléfono</strong></MudText>
+                            <MudText Typo="Typo.h6"><strong>@localizer["AboutMe.Phone"]</strong></MudText>
                             <MudText Typo="Typo.body2">317 637 4276</MudText>
                         </li>
                         <li>
-                            <MudText Typo="Typo.h6"><strong>Email</strong></MudText>
+                            <MudText Typo="Typo.h6"><strong>@localizer["AboutMe.Email"]</strong></MudText>
                             <MudText Typo="Typo.body2">juancho-_-11@hotmail.com</MudText>
                         </li>
                         <li>
-                            <MudText Typo="Typo.h6"><strong>Pais/Ciudad</strong></MudText>
+                            <MudText Typo="Typo.h6"><strong>@localizer["AboutMe.Country"]</strong></MudText>
                             <MudText Typo="Typo.body2">Cartago, Valle Del Cauca, Colombia</MudText>
                         </li>
 
@@ -46,40 +46,41 @@
 
                 <!-- intereses -->
                 <div class="col">
-                    <MudText Typo="Typo.h6" Style="margin-bottom:10px; margin-left:8px;">Intereses</MudText>
+                    <MudText Typo="Typo.h6" Style="margin-bottom:10px; margin-left:8px;">@localizer["AboutMe.interests"]</MudText>
                     <div class="contenedor-intereses">
                         <div class="interes">
                             <i class="fa-solid fa-code"></i>
-                            <span>DESARROLLO</span>
+                            <span>@localizer["AboutMe.DivDev"]</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-gamepad"></i>
-                            <span>JUEGOS</span>
+                            <span>@localizer["AboutMe.DivGames"]</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-headphones"></i>
-                            <span>MUSICA</span>
+                            <span>@localizer["AboutMe.DivMusic"]</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-plane"></i>
-                            <span>VIAJAR</span>
+                            <span>@localizer["AboutMe.DivTravel"]</span>
                         </div>
                         <div  class="interes">
                             <i class="fa-solid fa-person-hiking"></i>
-                            <span>DEPORTE</span>
+                            <span>@localizer["AboutMe.DivSports"]</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-car"></i>
-                            <span>AUTOS</span>
+                            <span>@localizer["AboutMe.DivCars"]</span>
                         </div>
 
                     </div>
                 </div>
             </div>
-            <a href="https://drive.google.com/file/d/1PKab2nqADv4r4NqZOg8RCSJ3nS0yGIXh/view?usp=sharing" target="_blank"><button>
-                Ver Y/O Descargar CV <i class="fa-solid fa-download"></i>
-                <span class="overlay"></span>
-            </button></a>
+            <div style="text-align: center; margin: 20px auto; padding: 10px 22px;"> 
+                <MudButton Href="https://drive.google.com/file/d/1BBbwAceYodVc-D-tsBTFcFJ9TK2wavsP/view?usp=share_link" Target="_blank" Variant="Variant.Outlined" EndIcon="@Icons.Material.Filled.Download" Color="Color.Info">
+                    @localizer["AboutMe.ButtonDownloadCV"]
+                </MudButton>
+            </div>
         </div>
     </section>
     <footer>

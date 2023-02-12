@@ -1,0 +1,48 @@
+﻿@inject IJSRuntime js
+@inject NavigationManager navigationManager
+@using System.Globalization
+    <style>
+        .mud-select{
+            padding: 0px 12px 8px;
+            
+        }
+        .mud-input-text {
+            color: white !important;
+            width:160px; 
+            height:56px;
+            font:roboto;
+            
+        }
+        .mud-input-control>.mud-input-control-input-container>div.mud-input.mud-input-text {
+            margin-top: 0px;
+        }
+
+    </style>
+
+<MudSelect @bind-Value="language"  AdornmentIcon="@Icons.Material.Filled.Flag" AdornmentColor="Color.Info">
+    @foreach(var item in languages)
+    {
+    <MudSelectItem Value="@item" >@item.DisplayName</MudSelectItem>
+    }
+</MudSelect>
+@code {
+    CultureInfo[] languages = new[]
+        {
+        new CultureInfo("en-US"),
+        new CultureInfo("es-CO"),
+    };
+
+    CultureInfo language
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if(CultureInfo.CurrentCulture != value)
+            {
+                var jsInProccessRuntime = (IJSInProcessRuntime)js;
+                jsInProccessRuntime.InvokeVoid("language.set", value.Name);
+                navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
+            }
+        }
+    }
+}

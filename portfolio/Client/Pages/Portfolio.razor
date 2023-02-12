@@ -1,4 +1,6 @@
-﻿@page "/Portfolio"
+﻿@inject IStringLocalizer<Resource> localizer
+
+@page "/Portfolio"
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +15,7 @@
 <body>
     <section id="portfolio" class="portfolio">
         <div class="contenido-seccion">
-            <h2>PORTFOLIO</h2>
+            <h2>@localizer["Portfolio.Tilte"]</h2>
             <div class="galeria">
                 <div  class="proyecto"><a href="https://github.com/JuanManuel753/Proyecto-Entrada-y-Salida" target="_blank">
                     <img src="img/Portfolio/Proyecto E-S.jpg" alt="">

@@ -1,4 +1,6 @@
-﻿@page "/Contact"
+﻿@inject IStringLocalizer<Resource> localizer
+
+@page "/Contact"
 
 <!DOCTYPE html>
 <html lang="es">
@@ -13,7 +15,7 @@
 <body>
     <section class="resume-section" id="contacto">
         <div class="resume-section-content">
-            <MudText Typo="Typo.h3" Style="font-size: 48px; font-family: 'Righteous'; text-align: center; padding: 20px 0;">CONTÁCTAME!</MudText>
+            <MudText Typo="Typo.h3" Style="font-size: 48px; font-family: 'Righteous'; text-align: center; padding: 20px 0;">@localizer["Contact.Title"]</MudText>
                     
             <ul class="fa-ul">
                 <li>
@@ -30,7 +32,7 @@
                 </li>
             </ul>
 
-            <MudText Typo="Typo.h6" Style="padding: 20px 0;">ESTE SITIO ESTA DESARROLLADO CON:</MudText>
+            <MudText Typo="Typo.h6" Style="padding: 20px 0;">@localizer["Contact.WebSite"]</MudText>
             <img alt="BLAZOR WASM" src="https://img.shields.io/badge/BLAZOR%20WASM-%23563D7C.svg?style=for-the-badge&logo=Blazor&logoColor=white" />
             <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" />
             <img alt="MUDBLAZOR" src="https://img.shields.io/badge/MUDBLAZOR-%23563D7C.svg?style=for-the-badge&logo=MudBlazor&logoColor=white">

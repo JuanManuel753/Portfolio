@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject IStringLocalizer<Resource> localizer
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -17,7 +19,7 @@
             <img src="img/foto2.jpg" alt="">
         </div>
         <h1>Juan Manuel Ramirez Hernandez</h1>
-        <h2>Desarrollador de Software</h2>
+        <h2>@localizer["Index.Desarrollador"]</h2>
         <div class="redes">
             <a href="https://wa.me/573176374276" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
             <a href="https://www.instagram.com/juanmanuelr753/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -36,6 +38,7 @@
             <a href="https://github.com/JuanManuel753" target="_blank"><i class="fa-brands fa-github"></i></a>
             <a href="https://www.linkedin.com/in/juan-manuel-r-08885b128/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
+
 </footer>
 
 

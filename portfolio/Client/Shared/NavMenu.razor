@@ -1,5 +1,11 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject IStringLocalizer<Resource> localizer
+@inject IJSRuntime js
+@inject NavigationManager navigationManager
+@using System.Globalization
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
+        <SelectorLanguage />
         <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,38 +16,39 @@
     <nav class="flex-column" >
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span  aria-hidden="true"></span> Inicio
+                <span  aria-hidden="true"></span> @localizer["Inicio"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="Aboutme">
-                <span  aria-hidden="true"></span> Sobre Mi
+                <span  aria-hidden="true"></span> @localizer["Sobre Mi"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="Skills">
-                <span aria-hidden="true"></span> Habilidades
+                <span aria-hidden="true"></span> @localizer["Habilidades"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="Curriculum">
-                <span aria-hidden="true"></span> Curriculum
+                <span aria-hidden="true"></span> @localizer["Curriculum"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="Portfolio">
-                <span  aria-hidden="true"></span> Portafolio
+                <span  aria-hidden="true"></span> @localizer["Portafolio"]
             </NavLink>
         </div>
         <div class="nav-item px-3">
             <NavLink class="nav-link" href="Contact">
-                <span aria-hidden="true"></span> Contacto
+                <span aria-hidden="true"></span> @localizer["Contacto"]
             </NavLink>
         </div>
     </nav>
 </div>
 
 @code {
+
     private bool collapseNavMenu = true;
 
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -49,5 +56,31 @@
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+
+
+
+
+
+
+    CultureInfo[] languages = new[]
+    {
+        new CultureInfo("en-US"),
+        new CultureInfo("es-CO"),
+    };
+
+    CultureInfo language
+    {
+        get => CultureInfo.CurrentCulture;
+        set
+        {
+            if (CultureInfo.CurrentCulture != value)
+            {
+                var jsInProccessRuntime = (IJSInProcessRuntime)js;
+                jsInProccessRuntime.InvokeVoid("language.set", value.Name);
+                navigationManager.NavigateTo(navigationManager.Uri, forceLoad: true);
+            }
+        }
     }
 }

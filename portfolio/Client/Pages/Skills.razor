@@ -1,4 +1,5 @@
-﻿@page "/Skills"
+﻿@inject IStringLocalizer<Resource> localizer
+@page "/Skills"
 
 <!DOCTYPE html>
 <html lang="es">
@@ -14,11 +15,11 @@
         <!-- SECCION SKILLS -->
     <section class="skills" id="skills">
         <div class="contenido-seccion">
-             <MudText Typo="Typo.h3" Style="font-size: 48px; font-family: 'Righteous'; text-align: center; padding: 20px 0;">HABILIDADES</MudText>
+             <MudText Typo="Typo.h3" Style="font-size: 48px; font-family: 'Righteous'; text-align: center; padding: 20px 0;">@localizer["Skills.Title"]</MudText>
             <div class="fila">
                 <!-- Technical Skill -->
                 <div class="col">
-                    <MudText Typo="Typo.h6" Style="margin-bottom:8px;">LENGUAJES DE PROGRAMACIÓN</MudText>
+                    <MudText Typo="Typo.h6" Style="margin-bottom:8px;">@localizer["Skills.Languages"]</MudText>
                     <div class="subheading mb-3">
                         <p>
                         <img alt="HTML5" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white">
@@ -27,7 +28,7 @@
                         <img alt="JavaScript" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
                         <img alt="SQL" src="https://img.shields.io/badge/SQL%20SERVER-%23563D7C.svg?style=for-the-badge&logo=entity%20framework&logoColor=white">
                         </p>
-                        <MudText Typo="Typo.h6" Style="margin-bottom:8px;">FRAMEWORKS Y LIBRERÍAS</MudText>
+                        <MudText Typo="Typo.h6" Style="margin-bottom:8px;">@localizer["Skills.Bookstores"]</MudText>
                         <p>
                             <img alt="ENTITY FRAMEWORK" src="https://img.shields.io/badge/ENTITY%20FRAMEWORK-%23563D7C.svg?style=for-the-badge&logo=entity%20framework&logoColor=white">
                             <img alt="BOOTSTRAP" src="https://img.shields.io/badge/BOOTSTRAP-%232671E5.svg?style=for-the-badge&logo=bootstrap&logoColor=white">
@@ -37,7 +38,7 @@
                             <img alt="Asp.Net" src="https://img.shields.io/badge/Asp%20.Net-%232671E5.svg?style=for-the-badge&logo=.net&logoColor=white">
                             <img alt="WINDOWS FORMS" src="https://img.shields.io/badge/Windows%20Forms-563D7C.svg?style=for-the-badge&logo=visual%20studio&logoColor=white">
                         </p>
-                        <MudText Typo="Typo.h6" Style="margin-bottom:8px;">SOFTWARE Y HERRAMIENTAS</MudText>
+                        <MudText Typo="Typo.h6" Style="margin-bottom:8px;">@localizer["Skills.Tools"]</MudText>
                         <p>
                             <img alt="VISUAL STUDIO" src="https://img.shields.io/badge/VISUAL%20STUDIO-563D7C.svg?style=for-the-badge&logo=visual%20studio&logoColor=white">
                             <img alt="VISUAL STUDIO CODE" src="https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white%22">
@@ -46,7 +47,7 @@
                 </div>
                 <!-- Professional Skills -->
                 <div class="col">
-                    <MudText Typo="Typo.h6" Style="margin-bottom:8px;">HABILIDADES PROFESIONALES</MudText>
+                    <MudText Typo="Typo.h6" Style="margin-bottom:8px;">@localizer["Skills.ProfessionalSkills"]</MudText>
                     <div class="subheading mb-3">
                         <p>
                             <img alt="COMUNICACION" src="https://img.shields.io/badge/Comunicacion-%23E34F26.svg?style=for-the-badge">
@@ -57,7 +58,7 @@
                             <img alt="FLEXIBILIDAD PARA EL APRENDIZAJE" src="https://img.shields.io/badge/FLEXIBILIDAD%20PARA%20EL%20APRENDIZAJE-%23563D7C.svg?style=for-the-badge">
                         </p>
                         <!--Other SKills-->
-                        <MudText Typo="Typo.h6" Style="margin-bottom:8px;">OTRAS HABILIDADES</MudText>
+                        <MudText Typo="Typo.h6" Style="margin-bottom:8px;">@localizer["Skills.OtherSkills"]</MudText>
                          <p>
                             <img alt="WORD" src="https://img.shields.io/badge/microsoft%20word-%231572B6.svg?style=for-the-badge&logo=microsoft%20word&logoColor=white">
                             <img alt="EXCEL" src="https://img.shields.io/badge/microsoft%20excel-217346.svg?style=for-the-badge&logo=microsoft%20excel&logoColor=white">

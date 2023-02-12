@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	  <BlazorWebAssemblyLoadAllGlobalizationData>true</BlazorWebAssemblyLoadAllGlobalizationData>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -11,8 +10,8 @@
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.13" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.13" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Extensions.Localization" Version="7.0.2" />
     <PackageReference Include="MudBlazor" Version="6.1.7" />
+    <PackageReference Include="Toolbelt.Blazor.I18nText" Version="12.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,18 +19,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ResourceLanguage\Resource.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
+    <None Remove="i18ntext\text.es.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="ResourceLanguage\Resource.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Remove="i18ntext\text.en.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="i18ntext\json.json" />
   </ItemGroup>
 
 </Project>
